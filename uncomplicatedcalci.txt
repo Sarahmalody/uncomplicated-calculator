@@ -1,0 +1,113 @@
+import math
+import numpy as np
+
+# Function to perform basic arithmetic operations
+def arithmetic_op(num1, num2, operator):
+    if operator == '+':
+        return num1 + num2
+    elif operator == '-':
+        return num1 - num2
+    elif operator == '*':
+        return num1 * num2
+    elif operator == '/':
+        return num1 / num2
+    else:
+        return "Invalid operator"
+
+# Function to perform trigonometric operations
+def trig_op(num, operator):
+    if operator == 'sin':
+        return math.sin(num)
+    elif operator == 'cos':
+        return math.cos(num)
+    elif operator == 'tan':
+        return math.tan(num)
+    elif operator == 'asin':
+        return math.asin(num)
+    elif operator == 'acos':
+        return math.acos(num)
+    elif operator == 'atan':
+        return math.atan(num)
+    else:
+        return "Invalid operator"
+
+# Function to perform exponential operations
+def exp_op(num, operator):
+    if operator == 'sqrt':
+        return math.sqrt(num)
+    elif operator == 'log':
+        return math.log10(num)
+    elif operator == 'ln':
+        return math.log(num)
+    elif operator == 'exp':
+        return math.exp(num)
+    else:
+        return "Invalid operator"
+
+# Function to perform statistical operations
+def stat_op(nums, operator):
+    if operator == 'mean':
+        return np.mean(nums)
+    elif operator == 'median':
+        return np.median(nums)
+    elif operator == 'mode':
+        return np.mode(nums)
+    elif operator == 'variance':
+        return np.var(nums)
+    elif operator == 'stddev':
+        return np.std(nums)
+    elif operator == 'corrcoef':
+        return np.corrcoef(nums)
+    elif operator == 'regression':
+        x = nums[:,0]
+        y = nums[:,1]
+        return np.polyfit(x, y, 1)
+    else:
+        return "Invalid operator"
+
+# Function to perform matrix operations
+def matrix_op(matrix, operator):
+    if operator == 'det':
+        return np.linalg.det(matrix)
+    elif operator == 'inv':
+        return np.linalg.inv(matrix)
+    elif operator == 'eigen':
+        return np.linalg.eig(matrix)
+    else:
+        return "Invalid operator"
+
+# Function to perform complex number operations
+def complex_op(num1, num2, operator):
+    if operator == '+':
+        return num1 + num2
+    elif operator == '-':
+        return num1 - num2
+    elif operator == '*':
+        return num1 * num2
+    elif operator == '/':
+        return num1 / num2
+    else:
+        return "Invalid operator"
+
+# Function to perform binary/octal/hexadecimal conversions
+def conversion_op(num, operator):
+    if operator == 'bin':
+        return bin(num)
+    elif operator == 'oct':
+        return oct(num)
+    elif operator == 'hex':
+        return hex(num)
+    else:
+        return "Invalid operator"
+
+# Function to convert number to engineering notation
+def eng_notation(num):
+    exp = int(math.log10(abs(num)) // 3) * 3
+    num /= 10 ** exp
+    return f"{num:.3f}E{exp}"
+
+# Main program to take user input and perform operations
+while True:
+    print("Enter 'q' to quit")
+    num1 = input("Enter first number: ")
+   
